@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import InputNumber from './components/InputNumber'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+export default function App () {
+  const [value, setValue] =  useState('aaa')
+
+  return (
+    <div>
+      <InputNumber value={value} onChange={val => {
+        setValue(val)
+      }} />
+      <InputNumber defaultValue={value} onChange={val => {
+        setValue(val)
+      }} />
+    </div>
+  )
 }
-
-export default App;
