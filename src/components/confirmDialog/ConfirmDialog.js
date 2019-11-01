@@ -61,7 +61,7 @@ const confirmSource = {
   show(obj){
     node = document.createElement('div')
     document.body.appendChild(node)
-    ReactDOM.render(<ConfirmDialog content={obj.content} title={obj.title} confirm={obj.confirm} cancle={obj.cancle} okText={obj.okText} cancelText={obj.cancelText} />, node)
+    ReactDOM.render(<ConfirmDialog {...obj} />, node)
   },
   hide(){
     if(node){

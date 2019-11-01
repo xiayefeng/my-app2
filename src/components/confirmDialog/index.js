@@ -2,7 +2,7 @@ import confirmSource from './ConfirmDialog'
 
 export default function confirm (props) {
   return new Promise((resolve, reject) =>  {
-    if(typeof props === 'string') {
+    if(props && typeof props === 'string') {
       confirmSource.show({content: props, confirm: () => {
         return resolve(1)
       }, cancle: () => {
