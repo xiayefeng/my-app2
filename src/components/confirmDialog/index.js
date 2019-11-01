@@ -18,7 +18,8 @@ export default function confirm (props) {
       }, cancle() {
         props.onCancel && props.onCancel()
         return resolve(0)
-      }})
+      }, cancelText: props.cancelText
+      ,okText: props.okText})
     }
   })
 }
