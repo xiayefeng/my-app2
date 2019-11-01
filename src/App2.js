@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import confirm from './components/confirmDialog'
 
 class App extends Component {
   render() {
@@ -22,6 +23,14 @@ class App extends Component {
         </header>
       </div>
     );
+  }
+  async componentDidMount() {
+    let res = await confirm('确定删除吗？')
+    if(res) {
+      console.log('是')
+    } else {
+      console.log('否')
+    }
   }
 }
 
